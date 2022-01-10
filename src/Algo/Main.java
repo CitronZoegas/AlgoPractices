@@ -11,6 +11,7 @@ public class Main {
 
 
 
-	    new Algorithms();
+	    Algorithms algo = new Algorithms();
+	    algo.maxProfit(arr);
     }
 }
