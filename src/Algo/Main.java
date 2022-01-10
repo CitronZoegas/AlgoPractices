@@ -3,6 +3,14 @@ package Algo;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        //test values
+        String str = null;
+        int num = 0;
+        int[] arr= {1,2,3,4};
+        int[][] arr2D = {{1,2,3},{1,2,3}};
+
+
+
+	    new Algorithms();
     }
 }
