@@ -592,5 +592,8 @@ public class Algorithms {
         currNode.right = helper(nums,midInt+1,right);
         return currNode;
     }
+    public TreeNode nextAlgorithm() {
+        return null;
+    }
 }
 
