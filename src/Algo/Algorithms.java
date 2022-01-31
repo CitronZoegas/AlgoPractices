@@ -593,7 +593,33 @@ public class Algorithms {
         return currNode;
     }
     public TreeNode nextAlgorithm() {
+        String a = "jallapeno";
+
+
+        for(int i = 0; i<a.length(); i++){
+            
+        }
         return null;
+    }
+
+
+    public boolean betterSudoku(char[][] board){
+        char period = '.';
+        HashSet<String> grid = new HashSet<>();
+
+        for(int row = 0; row<9;row++){
+            for(int col = 0; col<9;col++){
+                char bokstav = board[row][col];
+                if(board[row][col] != period){
+                    if( !grid.add(bokstav +"row"+ row) ||
+                            !grid.add(bokstav +"col"+ col) ||
+                            !grid.add(bokstav +"box of 3z3"+row/3 +"lol"+ col/3)
+                    )
+                        return false;
+                }
+            }
+        }
+        return true;
     }
 }
 
