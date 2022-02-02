@@ -1,5 +1,6 @@
 package Algo;
 
+import AutoAttackingGame.MainPanel;
 import BetterSudoku.SudokuChecker;
 import BetterSudoku.SudokuSolver;
 
@@ -13,12 +14,14 @@ public class Main {
         int[][] arr2D = {{1,2,3},{1,2,3}};
 
         /**
+         * To Run the Game-package
+         */
+        MainPanel panel = new MainPanel();
+
+        /**
          * To Run the sudoku-Package
          */
-        SudokuChecker sudokuCh = new SudokuChecker();
-
-
-
+        //SudokuChecker sudokuCh = new SudokuChecker();
 
         /**
          * To Run the algorithm-Package
