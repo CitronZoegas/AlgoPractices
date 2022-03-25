@@ -66,7 +66,7 @@ public class Algorithms {
      * LEETCODE TASK maxprofit: When to buy and when to sell
      * @return
      */
-    public int maxProfit(int[] prices) {
+    public int maxProfit2(int[] prices) {
 
         if(prices == null || prices.length == 0 ){
             return 0;
@@ -527,7 +527,7 @@ public class Algorithms {
         return head.next;
 
     }
-    public int romanToInt(String s) {
+    public int romanToIntWrongOne(String s) {
         Map<Character, Integer> keyToValue = new HashMap<>();
 
         keyToValue.put('I', 1);
@@ -618,6 +618,144 @@ public class Algorithms {
             }
         }
         return true;
+    }
+    public int climbStairs(int n) {
+        if(n <= 1){
+            return 1;
+        }
+
+        int[]dynamicPr = new int[n + 1];
+        dynamicPr[1] = 1;
+        dynamicPr[2] = 2;
+        //dynamicPr[3] = 3;
+
+        for(int i = 3; i <= n; i++){
+            dynamicPr[i] = dynamicPr[i-1]+dynamicPr[i-2];
+        }
+        return dynamicPr[n];
+    }
+    public int maxProfit(int[] prices) {
+
+        int previousBiggest = 0;
+        int previousMinimum = Integer.MAX_VALUE;
+        int len = prices.length;
+
+        for(int i = 0; i < len; i++){
+            if(prices[i] < previousMinimum){
+
+                previousMinimum = prices[i];
+            }else{
+                previousBiggest = Math.max(previousBiggest,prices[i] - previousMinimum);
+            }
+        }
+        return previousBiggest;
+    }
+    public int maxSubArray(int[] nums) {
+
+        int len = nums.length;
+
+        int currentMax = nums[0];
+        int allTimeMax = nums[0];
+
+
+        for(int i = 1; i <len;i++){
+            allTimeMax = Math.max(nums[i]+allTimeMax,nums[i]);
+            currentMax = Math.max(currentMax,allTimeMax);
+        }
+        return currentMax;
+    }
+    public int rob(int[] nums) {
+        if (nums.length == 0) return 0;
+        int prev1 = 0;
+        int prev2 = 0;
+        for (int num : nums) {
+            int temp = prev1;
+            prev1 = Math.max(prev2 + num, prev1);
+            prev2 = temp;
+        }
+        return prev1;
+    }
+    public boolean isPowerOfThree(int n) {
+        if(n==0) return false;
+
+        return n == Math.pow(3, Math.round(Math.log(n)/Math.log(3)));
+
+    }
+
+    public int romanToInt(String s) {
+
+        Map<Character, Integer> keyToValue = new HashMap<>();
+        keyToValue.put('I', 1);
+        keyToValue.put('V', 5);
+        keyToValue.put('X', 10);
+        keyToValue.put('L', 50);
+        keyToValue.put('C', 100);
+        keyToValue.put('D', 500);
+        keyToValue.put('M', 1000);
+
+        int arabicNumerals = 0;
+        int temp = 0;
+
+
+        for(int i = 0; i<s.length(); i++){
+            //grabbing every value from the map
+            arabicNumerals = arabicNumerals + keyToValue.get(s.charAt(i));
+            int extra = keyToValue.get(s.charAt(i));
+            temp += extra;
+            //grabbing the
+            if(i > 0 && keyToValue.get(s.charAt(i-1)) <keyToValue.get(s.charAt(i))){
+                temp = temp -2* keyToValue.get(s.charAt(i-1));
+
+            }
+
+        }
+
+        return temp;
+    }
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int firstPointer = m-1;
+        int secondPointer = n-1;
+        int index = m+n-1;
+
+        while(secondPointer >=0){
+            if(firstPointer >= 0 && nums1[firstPointer] > nums2[secondPointer]){
+                nums1[index] = nums1[firstPointer];
+                index--;
+                firstPointer--;
+            }
+            else
+            {
+                nums1[index] = nums2[secondPointer];
+                index--;
+                secondPointer--;
+            }
+        }
+    }
+
+    public boolean isBadVersion(int test){
+        //method is different in leetcode.
+
+        if(test != 0){
+            return false;
+        }
+        return true;
+    }
+    public int firstBadVersion(int n) {
+
+        int start = 0;
+        int end = n;
+
+        while(start <= end){
+            int mid = start + (end-start)/2;
+            if(isBadVersion(mid)){
+                end = mid-1;
+            }
+            else{
+                start = mid+1;
+            }
+        }
+        return start;
     }
 }
 
