@@ -740,7 +740,9 @@ public class Algorithms {
             return false;
         }
         return true;
+
     }
+
     public int firstBadVersion(int n) {
 
         int start = 0;
@@ -756,6 +758,55 @@ public class Algorithms {
             }
         }
         return start;
+    }
+    public List<String> fizzBuzz(int n) {
+
+        List<String> list = new ArrayList<>(n+1);
+
+        int start = 1;
+        int end   = n;
+
+        for(int i = 1; i<=n; i++){
+
+            if(i%15 == 0){
+                list.add("FizzBuzz");
+            }
+            else if(i%3 == 0){
+                list.add("Fizz");
+            }
+            else if(i%5 == 0){
+                list.add("Buzz");
+            }
+            else {
+                list.add(Integer.toString(i));
+            }
+        }
+        return list;
+    }
+    private int val;
+
+    private Stack<Integer> stack;
+
+    public int MinStack() { // the constructor of a MinStack class but since its annoying to add classes all the
+                            // time so i just add constructor with a return type of int to remove errors.
+        stack = new Stack<Integer>();
+        return 0;
+    }
+
+    public void push(int val) {
+        stack.push(val);
+    }
+
+    public void pop() {
+        stack.pop();
+    }
+
+    public int top() {
+        return stack.peek();
+    }
+
+    public int getMin() {
+        return stack.stream().min(Integer::compare).get();
     }
 }
 
