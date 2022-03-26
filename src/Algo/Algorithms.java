@@ -12,6 +12,10 @@ public class Algorithms {
     public Algorithms() {
 
     }
+    /**
+     * This acts as a separator to understand where a certain question ends.
+     * ***********************************************************
+     */
     public int removeDuplicates(int[] nums) {
         int j = 1;
         for (int i = 1; i < nums.length; i++) {
@@ -27,6 +31,9 @@ public class Algorithms {
         return j;
     }
 
+    /**
+     * ***********************************************************
+     */
     public int StockCalculate(int[] prices) {
         /*int buy = 0;
         int sell = 0;
@@ -66,6 +73,9 @@ public class Algorithms {
      * LEETCODE TASK maxprofit: When to buy and when to sell
      * @return
      */
+    /**
+     * ***********************************************************
+     */
     public int maxProfit2(int[] prices) {
 
         if(prices == null || prices.length == 0 ){
@@ -93,6 +103,9 @@ public class Algorithms {
      * @return
      */
 
+    /**
+     * ***********************************************************
+     */
     public int[] rotate(int[] nums, int k) {
         //nums is the array we want to rotate k amount of times.
         //k = amount of rotations.
@@ -132,6 +145,9 @@ public class Algorithms {
 
         return nums;
     }
+    /**
+     * ***********************************************************
+     */
     public void reverse(int[]nums, int start, int end){
         while(start < end){
             int temp = nums[start];
@@ -142,6 +158,9 @@ public class Algorithms {
         }
     }
 
+    /**
+     * ***********************************************************
+     */
     public boolean containsDuplicate(int[] nums) {
         Arrays.sort(nums);
         for (int i = 1; i < nums.length; i++) {
@@ -166,6 +185,9 @@ public class Algorithms {
         }
         return res;
     }
+    /**
+     * ***********************************************************
+     */
     public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
@@ -189,6 +211,9 @@ public class Algorithms {
         return list.stream().mapToInt(Integer::intValue).toArray();
 
     }
+    /**
+     * ***********************************************************
+     */
     public int[] plusOne(int[] digits) {
 
         int[] onePlusArr = {digits.length};
@@ -206,6 +231,9 @@ public class Algorithms {
         reSizeArray[0] = 1;
         return reSizeArray;
     }
+    /**
+     * ***********************************************************
+     */
     public void moveZeroes(int[] nums) {
 
         if(nums == null || nums.length < 1) return;
@@ -224,6 +252,9 @@ public class Algorithms {
         }
         System.out.println(Arrays.toString(nums));
     }
+    /**
+     * ***********************************************************
+     */
     public int[] twoSum(int[] nums, int target) {
         int [] a = new int[]{-1,-1};
 
@@ -238,6 +269,9 @@ public class Algorithms {
         }
         return a;
     }
+    /**
+     * ***********************************************************
+     */
     public boolean isValidSudoku(char[][] board) {
 
         char period = '.';
@@ -256,6 +290,9 @@ public class Algorithms {
         }
         return true;
     }
+    /**
+     * ***********************************************************
+     */
     public void rotate90degrees(int[][] matrix) {
         int length = matrix.length;
         for(int row =0; row<length; row++){
@@ -274,6 +311,9 @@ public class Algorithms {
             }
         }
     }
+    /**
+     * ***********************************************************
+     */
     public void reverseString(char[] s) {
         StringBuilder sb = new StringBuilder(String.valueOf(s));
         sb.reverse();
@@ -281,6 +321,9 @@ public class Algorithms {
 
     }
 
+    /**
+     * ***********************************************************
+     */
     public int firstUniqChar(String s) {
 
         int L = s.length();
@@ -304,6 +347,9 @@ public class Algorithms {
         }
         return min == Integer.MAX_VALUE ? -1 : min;
     }
+    /**
+     * ***********************************************************
+     */
     public boolean isAnagram1(String s, String t) {
 
         List<Character> list = new ArrayList<>();
@@ -324,6 +370,9 @@ public class Algorithms {
         return false;
     }
 
+    /**
+     * ***********************************************************
+     */
     public boolean isAnagram(String s, String t) {
         if(s.length() != t.length()){
             return false;
@@ -342,6 +391,9 @@ public class Algorithms {
         }
         return true;
     }
+    /**
+     * ***********************************************************
+     */
     public boolean isPalindrome(String s) {
 
         int left=0;
@@ -371,6 +423,9 @@ public class Algorithms {
                 (c >= '0' && c <= '9');
     }*/
 
+    /**
+     * ***********************************************************
+     */
     public int myAtoi(String s) {
 
         if(s.isEmpty()){
@@ -416,6 +471,9 @@ public class Algorithms {
 
         return plusMinus*r;
     }
+    /**
+     * ***********************************************************
+     */
     public int strStr(String haystack, String needle) {
 
         if(needle.length() == 0) return 0;
@@ -435,6 +493,9 @@ public class Algorithms {
         }
         return -1;
     }
+    /**
+     * ***********************************************************
+     */
     public String countAndSay(int n) {
         //n = 3322251;
         if(n==1){
@@ -455,6 +516,9 @@ public class Algorithms {
         return endString.toString();
     }
 
+    /**
+     * ***********************************************************
+     */
     public String longestCommonPrefix(String[] strs) {
 
         if(strs == null || strs.length == 0) return "";
@@ -473,6 +537,9 @@ public class Algorithms {
         return Arrays.toString(strs);
     }
 
+    /**
+     * ***********************************************************
+     */
     public String sortArrays(String[] strs) {
         int len = strs.length;
         for(int i = 0;i < len; i++) {
@@ -487,14 +554,10 @@ public class Algorithms {
         return Arrays.toString(strs);
     }
 
-
-
-
+    /**
+     * ***********************************************************
+     */
     public ListNode removeNthFromEnd(ListNode head, int n) {
-
-
-
-
         return head;
     }
     public class ListNode {
@@ -505,6 +568,9 @@ public class Algorithms {
         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
     }
 
+    /**
+     * ***********************************************************
+     */
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
 
         ListNode head = new ListNode(0);
@@ -527,6 +593,9 @@ public class Algorithms {
         return head.next;
 
     }
+    /**
+     * ***********************************************************
+     */
     public int romanToIntWrongOne(String s) {
         Map<Character, Integer> keyToValue = new HashMap<>();
 
@@ -545,6 +614,9 @@ public class Algorithms {
         }
         return arabicNumerals;
     }
+    /**
+     * ***********************************************************
+     */
     public boolean isCorrect() {
         Queue<Integer> queue = new LinkedList<Integer>();
 
@@ -557,6 +629,9 @@ public class Algorithms {
         System.out.println("Amount: " + stack);
         return true;
     }
+    /**
+     * ***********************************************************
+     */
     public class TreeNode {
         int val;
         TreeNode left;
@@ -570,6 +645,9 @@ public class Algorithms {
         }
     }
 
+    /**
+     * ***********************************************************
+     */
     public TreeNode sortedArrayToBST(int[] nums) {
 
         if(nums == null || nums.length == 0){
@@ -600,6 +678,9 @@ public class Algorithms {
         return null;
     }
 
+    /**
+     * ***********************************************************
+     */
 
     public boolean betterSudoku(char[][] board){
         char period = '.';
@@ -619,6 +700,9 @@ public class Algorithms {
         }
         return true;
     }
+    /**
+     * ***********************************************************
+     */
     public int climbStairs(int n) {
         if(n <= 1){
             return 1;
@@ -634,6 +718,10 @@ public class Algorithms {
         }
         return dynamicPr[n];
     }
+
+    /**
+     * ***********************************************************
+     */
     public int maxProfit(int[] prices) {
 
         int previousBiggest = 0;
@@ -650,6 +738,9 @@ public class Algorithms {
         }
         return previousBiggest;
     }
+    /**
+     * ***********************************************************
+     */
     public int maxSubArray(int[] nums) {
 
         int len = nums.length;
@@ -664,6 +755,9 @@ public class Algorithms {
         }
         return currentMax;
     }
+    /**
+     * ***********************************************************
+     */
     public int rob(int[] nums) {
         if (nums.length == 0) return 0;
         int prev1 = 0;
@@ -681,7 +775,9 @@ public class Algorithms {
         return n == Math.pow(3, Math.round(Math.log(n)/Math.log(3)));
 
     }
-
+    /**
+     * ***********************************************************
+     */
     public int romanToInt(String s) {
 
         Map<Character, Integer> keyToValue = new HashMap<>();
@@ -712,7 +808,9 @@ public class Algorithms {
 
         return temp;
     }
-
+    /**
+     * ***********************************************************
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int firstPointer = m-1;
         int secondPointer = n-1;
@@ -732,7 +830,9 @@ public class Algorithms {
             }
         }
     }
-
+    /**
+     * ***********************************************************
+     */
     public boolean isBadVersion(int test){
         //method is different in leetcode.
 
@@ -742,7 +842,9 @@ public class Algorithms {
         return true;
 
     }
-
+    /**
+     * ***********************************************************
+     */
     public int firstBadVersion(int n) {
 
         int start = 0;
@@ -759,6 +861,9 @@ public class Algorithms {
         }
         return start;
     }
+    /**
+     * ***********************************************************
+     */
     public List<String> fizzBuzz(int n) {
 
         List<String> list = new ArrayList<>(n+1);
@@ -783,6 +888,10 @@ public class Algorithms {
         }
         return list;
     }
+
+    /**
+     * ***********************************************************
+     */
     private int val;
 
     private Stack<Integer> stack;
@@ -808,5 +917,114 @@ public class Algorithms {
     public int getMin() {
         return stack.stream().min(Integer::compare).get();
     }
+    /**
+     * ***********************************************************
+     */
+    public int hammingWeight(int n) {
+        String bit = Integer.toBinaryString(n);
+        int count = 0;
+        for(int i = 0; i < bit.length(); i++){
+            if(bit.charAt(i) == '1'){
+                count++;
+            }
+        }
+        return count;
+    }
+    public int reverseBits(int n) {
+        String bit = Integer.toBinaryString(n);
+        StringBuilder strBuild = new StringBuilder(bit);
+
+        for(int i = 0; i < bit.length(); i++){
+
+            if(bit.charAt(i) == '1'){
+                strBuild.append('0');
+            }else{
+                strBuild.append('1');
+            }
+        }
+        return Integer.parseInt(String.valueOf(strBuild));
+    }
+
+    public int missingNumber(int[] nums) {
+        int checkNumber = 0;
+        int saveMissing = 0;
+        mergeSort(nums, 0 ,nums.length-1);
+        System.out.println(mergeSort(nums,0,nums.length-1));
+
+        for(int i = 0; i<nums.length-3+1; i++){
+            if (nums[i] == nums[i + 2] - 2) {
+                return saveMissing = nums[i];
+            }
+            checkNumber++;
+        }
+        return saveMissing;
+    }
+
+    //merge sort
+    public void merge(int[] arr, int left, int middle, int right){
+
+        int low  = middle- left+1;
+        int high = right - middle;
+
+        int L[]  = new int [low];
+        int R[]  = new int [high];
+
+        int i = 0;
+        int j = 0;
+
+        for(i = 0; i < low; i++){
+            L[i] = arr[left + i];
+        }
+
+        for(j = 0; j < high; j++){
+            R[j] = arr[middle + 1 + j];
+        }
+
+        int k = left;
+        i = 0;
+        j = 0;
+
+        while(i < low && j < high){
+            if(L[i] <= R[j]){
+
+                arr[k] = L[i];
+                i++;
+
+            }else{
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+        while(i < low){
+
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+        while(j < high){
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    public int[] mergeSort (int[] arr, int left, int right){
+
+        int middle;
+
+        if(left < right){
+            middle = (left+right) / 2;
+
+            mergeSort(arr, left , middle);
+            mergeSort(arr, middle+1 , right);
+
+            merge(arr, left, middle, right);
+        }
+        return (arr);
+    }
+
+    //finito?
+
 }
 
