@@ -944,20 +944,24 @@ public class Algorithms {
         }
         return Integer.parseInt(String.valueOf(strBuild));
     }
-
+    /**
+     * ***********************************************************
+     */
     public int missingNumber(int[] nums) {
-        int checkNumber = 0;
-        int saveMissing = 0;
-        mergeSort(nums, 0 ,nums.length-1);
-        System.out.println(mergeSort(nums,0,nums.length-1));
 
-        for(int i = 0; i<nums.length-3+1; i++){
-            if (nums[i] == nums[i + 2] - 2) {
-                return saveMissing = nums[i];
+        int saveMissing = 0;
+
+        mergeSort(nums, 0 ,nums.length-1);
+
+        int i = 0;
+
+        for(i = 0; i<nums.length; i++){
+
+            if(i!=nums[i]) {
+                return i;
             }
-            checkNumber++;
         }
-        return saveMissing;
+        return i;
     }
 
     //merge sort
@@ -966,8 +970,8 @@ public class Algorithms {
         int low  = middle- left+1;
         int high = right - middle;
 
-        int L[]  = new int [low];
-        int R[]  = new int [high];
+        int[] L  = new int [low];
+        int[] R  = new int [high];
 
         int i = 0;
         int j = 0;
@@ -989,7 +993,6 @@ public class Algorithms {
 
                 arr[k] = L[i];
                 i++;
-
             }else{
                 arr[k] = R[j];
                 j++;
@@ -997,7 +1000,6 @@ public class Algorithms {
             k++;
         }
         while(i < low){
-
             arr[k] = L[i];
             i++;
             k++;
@@ -1009,22 +1011,42 @@ public class Algorithms {
         }
     }
 
-    public int[] mergeSort (int[] arr, int left, int right){
+    public void mergeSort (int[] arr, int left, int right){
 
         int middle;
+        if(left < right) {
+            middle = (left + right) / 2;
 
-        if(left < right){
-            middle = (left+right) / 2;
-
-            mergeSort(arr, left , middle);
-            mergeSort(arr, middle+1 , right);
+            mergeSort(arr, left, middle);
+            mergeSort(arr, middle + 1, right);
 
             merge(arr, left, middle, right);
         }
-        return (arr);
     }
 
     //finito?
 
-}
+    public void reverseStringRecursion(char[] s) {
+        helper(s, 0 , s.length-1);
+        /*String st = "";
+        for(int i = s.length-1; i>=0; i--){
+            st += s[i];
+        }
+        for(int i = 0; i<s.length; i++){
+            s[i] = st.charAt(i);
+        }*/
+    }
+    public void helper(char [] str, int start, int end){
+        if(start>=end){
+            return;
+        }
+        swap(str, start, end);
+        helper(str, ++start, --end);
+    }
 
+    public void swap(char[]str, int a ,int b) {
+        char temp = str[a];
+        str[a] = str[b];
+        str[b] = temp;
+    }
+}
