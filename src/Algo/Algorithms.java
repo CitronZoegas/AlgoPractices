@@ -2,15 +2,11 @@ package Algo;
 
 import java.util.*;
 
-
-
 import javax.swing.tree.TreeNode;
 import java.util.*;
 
 public class Algorithms {
-
     public Algorithms() {
-
     }
     /**
      * This acts as a separator to understand where a certain question ends.
@@ -25,12 +21,9 @@ public class Algorithms {
                 j++;
 
             }
-
         }
-
         return j;
     }
-
     /**
      * ***********************************************************
      */
@@ -45,10 +38,7 @@ public class Algorithms {
                 buy += prices[i];
                 buy -= prices[i];
             }
-
-
         }
-
         return profit;*/
 
         if(prices == null || prices.length == 0 ){
@@ -65,7 +55,6 @@ public class Algorithms {
         }
         return profit;
     }
-
 
     /**
      *
@@ -127,9 +116,6 @@ public class Algorithms {
             nums[0] = lastIndex;
         }*/
 
-
-
-
         /*for(int i = 0; i <= nums.length-1; i++) {
             temp[(i+k) % nums.length] = nums[i];
         }
@@ -141,7 +127,6 @@ public class Algorithms {
         reverse(nums,0, nums.length-1);
         reverse(nums,0,k-1);
         reverse(nums,k,nums.length-1);
-
 
         return nums;
     }
@@ -231,6 +216,7 @@ public class Algorithms {
         reSizeArray[0] = 1;
         return reSizeArray;
     }
+
     /**
      * ***********************************************************
      */
@@ -252,6 +238,7 @@ public class Algorithms {
         }
         System.out.println(Arrays.toString(nums));
     }
+
     /**
      * ***********************************************************
      */
