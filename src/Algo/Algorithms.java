@@ -259,6 +259,7 @@ public class Algorithms {
     /**
      * ***********************************************************
      */
+
     public boolean isValidSudoku(char[][] board) {
 
         char period = '.';
