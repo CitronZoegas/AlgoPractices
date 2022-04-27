@@ -1037,4 +1037,126 @@ public class Algorithms {
         str[a] = str[b];
         str[b] = temp;
     }
+    public int findCorrectNumber() {
+        String data =
+                "<Stat Type=\"duel_lost\">5</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"leftside_pass\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"accurate_pass\">30</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"won_tackle\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"att_miss_left\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_final_third_passes\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"rightside_pass\">13</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"attempts_conceded_ibox\">5</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"touches\">45</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"yellow_card\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_fwd_zone_pass\">16</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"accurate_fwd_zone_pass\">13</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_chipped_pass\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"effective_head_clearance\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"goals_conceded\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_scoring_att\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"blocked_pass\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"attempts_conceded_obox\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"ball_recovery\">7</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"poss_won_def_3rd\">3</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"accurate_back_zone_pass\">17</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"passes_right\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"successful_open_play_pass\">29</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_back_zone_pass\">19</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_long_balls\">6</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"goals_conceded_ibox\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"poss_won_mid_3rd\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"put_through\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"head_clearance\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"open_play_pass\">34</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"aerial_won\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_pass\">35</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_launches\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"fwd_pass\">13</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"touches_in_opp_box\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"att_bx_centre\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"game_started\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"long_pass_own_to_opp\">7</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"accurate_chipped_pass\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"duel_won\">3</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"successful_final_third_passes\">3</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"successful_put_through\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"total_tackle\">2</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"passes_left\">8</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"poss_lost_all\">6</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"accurate_long_balls\">4</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"challenge_lost\">3</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"att_ibox_miss\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"head_pass\">1</Stat>\n" +
+                        "\n" +
+                        "<Stat Type=\"shot_off_target\">";
+        int start = 0;
+        int end = data.length()-1;
+        String stattype = "Stat Type";
+        int count = 0;
+        return countMatches(data,stattype);
+
+    }
+
+    /* Checks if a string is empty ("") or null. */
+    public static boolean isEmpty(String s) {
+        return s == null || s.length() == 0;
+    }
+
+    /* Counts how many times the substring appears in the larger string. */
+    public static int countMatches(String text, String str)
+    {
+        if (isEmpty(text) || isEmpty(str)) {
+            return 0;
+        }
+        return text.split(str, -1).length-1;
+    }
 }

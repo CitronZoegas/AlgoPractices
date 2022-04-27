@@ -16,7 +16,7 @@ public class Main {
         /**
          * To Run the Game-package
          */
-        MainPanel panel = new MainPanel();
+        //MainPanel panel = new MainPanel();
 
         /**
          * To Run the sudoku-Package
@@ -26,7 +26,7 @@ public class Main {
         /**
          * To Run the algorithm-Package
          */
-        //Algorithms algo = new Algorithms();
-	    //algo.maxProfit(arr);
+        Algorithms algo = new Algorithms();
+        System.out.println(algo.findCorrectNumber());
     }
 }
