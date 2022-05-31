@@ -4,6 +4,9 @@ import AutoAttackingGame.MainPanel;
 import BetterSudoku.SudokuChecker;
 import BetterSudoku.SudokuSolver;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -27,6 +30,21 @@ public class Main {
          * To Run the algorithm-Package
          */
         Algorithms algo = new Algorithms();
-        System.out.println(algo.findCorrectNumber());
+
+        int[] testArray = new int[]{1, 3, 4, 6, 7, 9, 11, 15, 18, 23, 25};
+        int left = testArray[0];
+        int right = testArray.length+1;
+
+
+
+        int index = 6;
+        int mid = left + right / 2;
+
+        int result = algo.binarySearch(testArray,index,left,right);
+        if(result == -1){
+            System.out.println("Target was not found");
+        }else{
+            System.out.println(result);
+        }
     }
 }

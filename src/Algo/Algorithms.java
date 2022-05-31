@@ -1159,4 +1159,27 @@ public class Algorithms {
         }
         return text.split(str, -1).length-1;
     }
+
+    /**
+     * @param arr the array im gonna iterate.
+     * @param target the index we want to find
+     * @param left the most left(beginning) of the array.
+     * @param right the most right(end) of the array
+     */
+    public int binarySearch(int[] arr, int target, int left, int right){
+        int mid = (left + right) /2;
+        while(left <= right) {
+
+            if (arr[mid] == target) {
+                return mid;
+            }
+            if (arr[mid] > left) {
+                return binarySearch(arr,target,left,mid-1);
+            }else{
+                return binarySearch(arr,target,mid+1,right);
+            }
+        }
+        //GIVES -1 IF THE TARGET WAS NOT FOUND IN THE LIST
+        return -1;
+    }
 }
